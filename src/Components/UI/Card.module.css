@@ -1,0 +1,5 @@
+.card{
+    border-radius: 10px;
+    background-color: white;
+    width: clamp(20rem, 80vw, 50rem);
+}

@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import styles from "./App.module.css";
+import ClosedForm from "./Components/Form/ClosedForm";
+import IncomeForm from "./Components/Form/IncomeForm";
+import ExpenseForm from "./Components/Form/ExpenseForm";
+// import Chart from "./Components/Chart/Chart";
+// import Expenses from "./Components/Expenses/Expenses";
 
 function App() {
+  const [formType, setFormType] = useState("ClosedForm");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {formType === "ClosedForm" ? <ClosedForm/> : formType === "IncomeForm" ? <IncomeForm/> : <ExpenseForm/>}
+      {/* Chart */}
+      {/* Expenses */}
     </div>
   );
 }
