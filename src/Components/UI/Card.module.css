@@ -1,5 +1,7 @@
 .card{
+    margin-top: 2rem;
     border-radius: 10px;
-    background-color: white;
-    width: clamp(20rem, 80vw, 50rem);
+    background-color: rgb(65, 65, 65);
+    width: clamp(15rem, 80vw, 50rem);
+    padding: 2rem;
 }

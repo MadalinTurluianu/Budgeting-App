@@ -1,0 +1,52 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form div {
+  margin-top: 1rem;
+}
+
+.btn-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.form label {
+  margin-top: 1rem;
+}
+
+.form-expense button {
+  background-color: pink;
+  border: 1px solid red;
+}
+
+.form-income button {
+  background-color: rgb(126, 212, 126);
+  border: 1px solid rgb(17, 75, 0);
+}
+
+button {
+  transition: transform 0.05s;
+  width: 40%;
+  height: 2rem;
+  border-radius: 4px;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.unnecessary{
+    margin-left: 1rem;
+}
+
+.expense-btn{
+  background-color: pink;
+  border: 1px solid red;
+}
+.income-btn{
+  background-color: rgb(126, 212, 126);
+  border: 1px solid rgb(17, 75, 0);
+}
