@@ -1,25 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Filter.module.css";
 
-function Filter() {
-  let incomeChecked = false;
+function Filter(props) {
+  const [incomeChecked, setIncomeChecked] = useState(true);
   function incomeCheckboxHandler(event) {
-    incomeChecked = event.target.checked;
+    setIncomeChecked(event.target.checked);
   }
 
-  let expenseChecked = false;
+  const [expenseChecked, setExpenseChecked] = useState(true);
   function expenseCheckboxHandler(event) {
-    expenseChecked = event.target.checked;
+    setExpenseChecked(event.target.checked);
   }
 
-  let chosenYear = "none";
+  const [chosenYear, setChosenYear] = useState("none");
   function yearHandler(event) {
-    chosenYear = event.target.value;
+    setChosenYear(event.target.value);
   }
 
-  let chosenMonth = "none";
+  const [chosenMonth, setChosenMonth] = useState("none");
   function monthHandler(event) {
-    console.log(event.target.value);
+    setChosenMonth(event.target.value);
+  }
+
+  function filterBtnHandler() {
+    const filterOptions = {
+      year: chosenYear,
+      month: chosenMonth,
+      showIncome: incomeChecked,
+      showExpense: expenseChecked,
+    };
+
+    props.addFilter(filterOptions);
+  }
+
+  function removeFilterBtnHandler() {
+    props.removeFilter();
   }
 
   return (
@@ -28,7 +43,12 @@ function Filter() {
       <div className={styles["filter-container"]}>
         <div className={styles.year}>
           <label>Year</label>
-          <input type="number" min="2000" max={new Date().getFullYear()} onChange={yearHandler}/>
+          <input
+            type="number"
+            min="2000"
+            max={new Date().getFullYear()}
+            onChange={yearHandler}
+          />
         </div>
         <div className={styles.month}>
           <label>Month</label>
@@ -48,14 +68,15 @@ function Filter() {
             <option value="December">December</option>
           </select>
         </div>
-        <div className={styles["checkbox-btn__container"]}>
-          <div className={styles["checkbox-container"]}>
-            <label>Incomes</label>
-            <input type="checkbox" onChange={incomeCheckboxHandler} />
-            <label>Expenses</label>
-            <input type="checkbox" onChange={expenseCheckboxHandler} />
-          </div>
-          <button>Filter</button>
+        <div className={styles["checkbox-container"]}>
+          <label>Incomes</label>
+          <input type="checkbox" onChange={incomeCheckboxHandler} checked={incomeChecked}/>
+          <label>Expenses</label>
+          <input type="checkbox" onChange={expenseCheckboxHandler} checked={expenseChecked}/>
+        </div>
+        <div className={styles["buttons-container"]}>
+          <button onClick={filterBtnHandler}>Filter</button>
+          <button onClick={removeFilterBtnHandler}>Remove</button>
         </div>
       </div>
     </div>

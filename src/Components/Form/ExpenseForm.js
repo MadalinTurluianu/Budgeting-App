@@ -50,7 +50,7 @@ function ExpenseForm(props) {
         <input type="number" onChange={changeValueHandler} required></input>
         <label>Date</label>
         <input type="date" onChange={changeDateHandler} required />
-        <div>
+        {/* <div>
           <label>Necessary</label>
           <input
             type="radio"
@@ -65,7 +65,7 @@ function ExpenseForm(props) {
             value="unnecessary"
             required
           ></input>
-        </div>
+        </div> */}
         <div className={styles["btn-container"]}>
           <button type="submit">Add Expense</button>
           <button type="button" onClick={props.closeForm}>

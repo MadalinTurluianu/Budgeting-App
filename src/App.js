@@ -26,10 +26,8 @@ function App() {
   const [formData, setFormData] = useState([]);
 
   function takeData(data) {
-    setFormData((prevFormData) => [data, ...prevFormData]);
+    setFormData(prevFormData => [data, ...prevFormData]);
   }
-
-  console.log(formData);
 
   // -------------------------------------------------------------The returned page
   return (
