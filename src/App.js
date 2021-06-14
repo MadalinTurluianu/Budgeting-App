@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ClosedForm from "./Components/Form/ClosedForm";
 import IncomeForm from "./Components/Form/IncomeForm";
 import ExpenseForm from "./Components/Form/ExpenseForm";
-import List from "./Components/List/List"
+import List from "./Components/List/List";
 // import Chart from "./Components/Chart/Chart";
 // import Expenses from "./Components/Expenses/Expenses";
 
@@ -44,9 +44,9 @@ function App() {
       ) : (
         <ExpenseForm closeForm={closeForm} takeData={takeData} />
       )}
-      
+
       {/* Chart */}
-      <List data={formData}/>
+      <List data={formData} />
     </div>
   );
 }

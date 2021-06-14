@@ -1,18 +1,19 @@
 .income {
-  border-color: green;
-  background-color: #c8ffc8;
+  border-color: #114b00;
+  background-color: #52cf52;
 }
 
 .expense {
   border-color: red;
-  background-color: #f7bfbf;
+  background-color: #ff5151;
+  ;
 }
 
 .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.2rem 1rem 0.2rem 0.2rem;
   border-width: 2px;
   border-style: solid;
   margin-bottom: 1rem;
@@ -29,9 +30,9 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: 2px solid black;
+  border: 2px solid #333333;
   border-radius: 5px;
-  background-color: rgb(65, 65, 65);
+  background-color: #1d1d1d;
   color: white;
   padding: 0.5rem;
   margin-right: 1rem;

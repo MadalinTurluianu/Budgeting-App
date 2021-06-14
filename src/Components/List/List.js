@@ -1,11 +1,12 @@
 import React from "react";
-import styles from "./List.module.css";
 import Card from "../UI/Card";
 import ListItem from "./ListItem";
+import Filter from './Filter';
 
 function List(props) {
   return (
     <Card>
+      <Filter/>
       {props.data.map((object) => (
         <ListItem
           name={object.name}
