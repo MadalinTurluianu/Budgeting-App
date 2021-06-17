@@ -3,52 +3,41 @@ import Card from "../UI/Card";
 import ListItem from "./ListItem";
 import Filter from "./Filter";
 
-
-// BUG WHEN FILTER WITH INCOMES / EXPENSES
-
-let filterApplied = false;
-
 function List(props) {
+  const [isFiltered, setIsFiltered] = useState(false);
   const [filteredData, setFilteredData] = useState(props.data);
 
   function addFilter(filterOptions) {
+    let currentData = props.data;
+
+    setIsFiltered(true);
+
     if (filterOptions.year !== "none") {
-      filterApplied = true;
-      setFilteredData(
-        props.data.filter(
-          (listItem) =>
-            listItem.date.getFullYear().toString() === filterOptions.year
-        )
+      currentData = currentData.filter(
+        (listItem) =>
+          listItem.date.getFullYear().toString() === filterOptions.year
       );
     }
 
     if (filterOptions.month !== "none") {
-      filterApplied = true;
-      setFilteredData((prevFilteredData) =>
-        prevFilteredData.filter(
-          (listItem) =>
-            listItem.date.toLocaleString("default", { month: "long" }) ===
-            filterOptions.month
-        )
+      currentData = currentData.filter(
+        (listItem) =>
+          listItem.date.toLocaleString("default", { month: "long" }) ===
+          filterOptions.month
       );
     }
 
-    if (filterOptions.showIncome && filterOptions.showExpense) {
-      return;
-    } else if (filterOptions.showIncome) {
-      filterApplied = true;
-      setFilteredData((prevFilteredData) =>
-        prevFilteredData.filter((listItem) => listItem.type === "Income")
-      );
-    } else if (filterOptions.showExpense) {
-      filterApplied = true;
-      setFilteredData((prevFilteredData) =>
-        prevFilteredData.filter((listItem) => listItem.type === "Expense")
-      );
-    } else {
-      filterApplied = true;
-      setFilteredData([]);
+    if (!filterOptions.showIncome && !filterOptions.showExpense) {
+      currentData = [];
+
+    } else if (filterOptions.showExpense && !filterOptions.showIncome) {
+      currentData = currentData.filter((listItem) => listItem.type === "Expense");
+
+    } else if (filterOptions.showIncome && !filterOptions.showExpense) {
+      currentData = currentData.filter((listItem) => listItem.type === "Income");
     }
+
+    setFilteredData(currentData);
   }
 
   function removeFilter() {
@@ -59,7 +48,7 @@ function List(props) {
     <Card>
       <Filter addFilter={addFilter} removeFilter={removeFilter} />
 
-      {filterApplied
+      {isFiltered === true
         ? filteredData.map((object) => (
             <ListItem
               name={object.name}
