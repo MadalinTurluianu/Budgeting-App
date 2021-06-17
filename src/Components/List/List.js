@@ -4,13 +4,13 @@ import ListItem from "./ListItem";
 import Filter from "./Filter";
 
 function List(props) {
-  const [isFiltered, setIsFiltered] = useState(false);
+  const [filterActive, setFilterActive] = useState(false);
   const [filteredData, setFilteredData] = useState(props.data);
 
   function addFilter(filterOptions) {
     let currentData = props.data;
 
-    setIsFiltered(true);
+    setFilterActive(true);
 
     if (filterOptions.year !== "none") {
       currentData = currentData.filter(
@@ -41,21 +41,27 @@ function List(props) {
   }
 
   function removeFilter() {
-    setFilteredData(props.data);
+    setFilterActive(false);
+  }
+
+  function deleteItem(id) {
+    props.deleteItem(id);
   }
 
   return (
     <Card>
-      <Filter addFilter={addFilter} removeFilter={removeFilter} />
+      <Filter filterActive={filterActive} addFilter={addFilter} removeFilter={removeFilter} />
 
-      {isFiltered === true
+      {filterActive === true
         ? filteredData.map((object) => (
             <ListItem
               name={object.name}
               amount={object.amount}
               date={object.date}
               type={object.type}
+              id={object.id}
               key={object.id}
+              deleteItem={deleteItem}
             />
           ))
         : props.data.map((object) => (
@@ -64,7 +70,9 @@ function List(props) {
               amount={object.amount}
               date={object.date}
               type={object.type}
+              id={object.id}
               key={object.id}
+              deleteItem={deleteItem}
             />
           ))}
     </Card>

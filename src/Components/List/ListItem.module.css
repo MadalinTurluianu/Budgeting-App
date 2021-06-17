@@ -1,6 +1,15 @@
+.list-item{
+  display: flex;
+  margin-bottom: 1rem;
+}
+
 .income {
   border-color: #114b00;
   background-color: #52cf52;
+}
+
+.income button{
+  border-color: #114b00;
 }
 
 .expense {
@@ -10,14 +19,15 @@
 }
 
 .container {
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.2rem 1rem 0.2rem 0.2rem;
   border-width: 2px;
   border-style: solid;
-  margin-bottom: 1rem;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .container>p {
@@ -41,4 +51,14 @@
 
 .date p{
   margin: 0 0 2px 0;
+}
+
+.delete-btn{
+  align-self: center;
+  justify-self: flex-end;
+  display: flex;
+  background-color: transparent;
+  border: none;
+  width: 1.5rem;
+  height: 1.5rem;
 }

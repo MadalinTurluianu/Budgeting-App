@@ -39,7 +39,14 @@ function Filter(props) {
 
   return (
     <div className={styles.filter}>
-      <h2>Filter</h2>
+      {props.filterActive ? (
+        <div className={styles.title}>
+          <h2>Filter</h2>
+          <p>(The filter is active)</p>
+        </div>
+      ) : (
+        <h2>Filter</h2>
+      )}
       <div className={styles["filter-container"]}>
         <div className={styles.year}>
           <label>Year</label>
@@ -70,9 +77,17 @@ function Filter(props) {
         </div>
         <div className={styles["checkbox-container"]}>
           <label>Incomes</label>
-          <input type="checkbox" onChange={incomeCheckboxHandler} checked={incomeChecked}/>
+          <input
+            type="checkbox"
+            onChange={incomeCheckboxHandler}
+            checked={incomeChecked}
+          />
           <label>Expenses</label>
-          <input type="checkbox" onChange={expenseCheckboxHandler} checked={expenseChecked}/>
+          <input
+            type="checkbox"
+            onChange={expenseCheckboxHandler}
+            checked={expenseChecked}
+          />
         </div>
         <div className={styles["buttons-container"]}>
           <button onClick={filterBtnHandler}>Filter</button>

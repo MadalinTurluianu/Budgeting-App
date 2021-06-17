@@ -29,6 +29,15 @@ function App() {
     setFormData(prevFormData => [data, ...prevFormData]);
   }
 
+  // -------------------------------------------------------------Delete item
+
+  function deleteItem(id) {
+    let currentFormData = [...formData];
+    const index = currentFormData.findIndex(element => element.id === id);
+    currentFormData.splice(index, 1)
+    setFormData(currentFormData);
+  }
+
   // -------------------------------------------------------------The returned page
   return (
     <div>
@@ -44,7 +53,7 @@ function App() {
       )}
 
       {/* Chart */}
-      <List data={formData} />
+      <List data={formData} deleteItem={deleteItem}/>
     </div>
   );
 }
