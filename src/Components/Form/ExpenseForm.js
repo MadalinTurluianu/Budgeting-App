@@ -6,13 +6,21 @@ function ExpenseForm(props) {
   const [expenseName, setExpenseName] = useState("");
 
   function changeNameHandler(event) {
-    setExpenseName(event.target.value);
+    if (event.target.value.trim() === ""){
+      event.target.value = "";
+    } else {
+      setExpenseName(event.target.value);
+    }
   }
 
   const [expenseAmount, setExpenseAmount] = useState("");
 
   function changeValueHandler(event) {
-    setExpenseAmount(event.target.value);
+    if (event.target.value < 0) {
+      event.target.value = "";
+    } else {
+      setExpenseAmount(event.target.value);
+    }
   }
 
   const [date, setDate] = useState("");

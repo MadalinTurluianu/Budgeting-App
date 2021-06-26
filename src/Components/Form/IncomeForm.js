@@ -6,13 +6,21 @@ function IncomeForm(props) {
   const [incomeName, setIncomeName] = useState("");
 
   function changeNameHandler(event) {
-    setIncomeName(event.target.value);
+    if (event.target.value.trim() === ""){
+      event.target.value = "";
+    } else {
+      setIncomeName(event.target.value);
+    }
   }
 
   const [incomeAmount, setIncomeAmount] = useState("");
 
   function changeAmountHandler(event) {
-    setIncomeAmount(event.target.value);
+    if (event.target.value < 0) {
+      event.target.value = "";
+    } else {
+      setIncomeAmount(event.target.value);
+    }
   }
 
   const [date, setDate] = useState("");

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import ClosedForm from "./Components/Form/ClosedForm";
 import IncomeForm from "./Components/Form/IncomeForm";
 import ExpenseForm from "./Components/Form/ExpenseForm";
 import List from "./Components/List/List";
+
 // import Chart from "./Components/Chart/Chart";
 // import Expenses from "./Components/Expenses/Expenses";
 
@@ -26,22 +27,22 @@ function App() {
   const [formData, setFormData] = useState([]);
 
   function takeData(data) {
-    setFormData(prevFormData => [data, ...prevFormData]);
+    setFormData((prevFormData) => [data, ...prevFormData]);
   }
 
   // -------------------------------------------------------------Delete item
 
   function deleteItem(id) {
     let currentFormData = [...formData];
-    const index = currentFormData.findIndex(element => element.id === id);
-    currentFormData.splice(index, 1)
+    const index = currentFormData.findIndex((element) => element.id === id);
+    currentFormData.splice(index, 1);
     setFormData(currentFormData);
   }
 
   // -------------------------------------------------------------The returned page
   return (
-    <div>
-      {formType === "ClosedForm" ? (
+    <Fragment>
+            {formType === "ClosedForm" ? (
         <ClosedForm
           openIncomeForm={openIncomeForm}
           openExpenseForm={openExpenseForm}
@@ -53,8 +54,8 @@ function App() {
       )}
 
       {/* Chart */}
-      <List data={formData} deleteItem={deleteItem}/>
-    </div>
+      <List data={formData} deleteItem={deleteItem} />
+    </Fragment>
   );
 }
 

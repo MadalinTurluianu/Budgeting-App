@@ -59,6 +59,11 @@
   display: flex;
   background-color: transparent;
   border: none;
-  width: 1.5rem;
-  height: 1.5rem;
+  padding: none;
+  width: 2rem;
+  height: 2rem;
+}
+
+.delete-btn img{
+  width: 100%;
 }
