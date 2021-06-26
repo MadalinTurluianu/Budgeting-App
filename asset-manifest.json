@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/Budgeting-App/static/css/main.2e5fa30f.chunk.css",
-    "main.js": "/Budgeting-App/static/js/main.2562384a.chunk.js",
-    "main.js.map": "/Budgeting-App/static/js/main.2562384a.chunk.js.map",
+    "main.css": "/Budgeting-App/static/css/main.7dcc78fc.chunk.css",
+    "main.js": "/Budgeting-App/static/js/main.b6955050.chunk.js",
+    "main.js.map": "/Budgeting-App/static/js/main.b6955050.chunk.js.map",
     "runtime-main.js": "/Budgeting-App/static/js/runtime-main.a6d085cc.js",
     "runtime-main.js.map": "/Budgeting-App/static/js/runtime-main.a6d085cc.js.map",
     "static/js/2.a177a635.chunk.js": "/Budgeting-App/static/js/2.a177a635.chunk.js",
     "static/js/2.a177a635.chunk.js.map": "/Budgeting-App/static/js/2.a177a635.chunk.js.map",
     "index.html": "/Budgeting-App/index.html",
-    "static/css/main.2e5fa30f.chunk.css.map": "/Budgeting-App/static/css/main.2e5fa30f.chunk.css.map",
+    "static/css/main.7dcc78fc.chunk.css.map": "/Budgeting-App/static/css/main.7dcc78fc.chunk.css.map",
     "static/js/2.a177a635.chunk.js.LICENSE.txt": "/Budgeting-App/static/js/2.a177a635.chunk.js.LICENSE.txt",
     "static/media/bin.a00f55a4.png": "/Budgeting-App/static/media/bin.a00f55a4.png"
   },
   "entrypoints": [
     "static/js/runtime-main.a6d085cc.js",
     "static/js/2.a177a635.chunk.js",
-    "static/css/main.2e5fa30f.chunk.css",
-    "static/js/main.2562384a.chunk.js"
+    "static/css/main.7dcc78fc.chunk.css",
+    "static/js/main.b6955050.chunk.js"
   ]
 }
