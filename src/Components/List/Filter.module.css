@@ -1,11 +1,42 @@
 .filter {
   color: white;
   font-weight: bold;
-  margin-bottom: 2rem;
 }
 
-.filter h2 {
+.filter .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.filter .title h2 {
   margin: 0;
+  display: inline-block;
+}
+
+.filter .title p {
+  display: inline-block;
+  margin: 0;
+  color: #3685eb;
+}
+
+.filter .title button {
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 2px solid white;
+  justify-self: flex-end;
+  transition: transform 0.3s;
+  margin: 0;
+}
+
+.filter-container {
+  margin-bottom: 2rem;
+}
+.dropdown-button__active {
+  transform: rotate(180deg);
 }
 
 .filter label {
@@ -14,17 +45,7 @@
 
 .filter button {
   background-color: #3685eb;
-  border: 2px solid #0053be
-}
-
-.title h2{
-  display: inline-block;
-}
-
-.title p{
-  display: inline-block;
-  margin-left: 2rem;
-  color: #3685eb;
+  border: 2px solid #0053be;
 }
 
 .year {
@@ -55,3 +76,6 @@
   margin-left: 1rem;
 }
 
+.filter .filter-container__inactive {
+  display: none;
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Filter.module.css";
 
 function Filter(props) {
@@ -37,17 +37,33 @@ function Filter(props) {
     props.removeFilter();
   }
 
+  const [droppedDown, setDroppedDown] = useState(false);
+
+  function toggleFilter(event) {
+    if (droppedDown === false) {
+      event.target.classList.add(styles["dropdown-button__active"]);
+      setDroppedDown(true)
+    } else {
+      event.target.classList.remove(styles["dropdown-button__active"]);
+      setDroppedDown(false)
+    } 
+  }
+
   return (
     <div className={styles.filter}>
       {props.filterActive ? (
         <div className={styles.title}>
           <h2>Filter</h2>
           <p>(The filter is active)</p>
+          <button onClick={toggleFilter}>V</button>
         </div>
       ) : (
-        <h2>Filter</h2>
+        <div className={styles.title}>
+          <h2>Filter</h2>
+          <button onClick={toggleFilter}>V</button>
+        </div>
       )}
-      <div className={styles["filter-container"]}>
+      <div className={droppedDown === true ? (styles["filter-container"]) : (styles["filter-container__inactive"])}>
         <div className={styles.year}>
           <label>Year</label>
           <input
