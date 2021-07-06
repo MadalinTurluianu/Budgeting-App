@@ -27,7 +27,6 @@
   background-color: transparent;
   border-radius: 50%;
   border: 2px solid white;
-  justify-self: flex-end;
   transition: transform 0.3s;
   margin: 0;
 }

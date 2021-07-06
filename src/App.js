@@ -38,6 +38,15 @@ function App() {
   function addFilter(filterOptions) {
     let currentData = formData;
 
+    if (
+      filterOptions.year === "none" &&
+      filterOptions.month === "none" &&
+      filterOptions.showIncome &&
+      filterOptions.showExpense
+    ) {
+      return;
+    }
+
     setFilterActive(true);
 
     if (filterOptions.year !== "none") {
@@ -82,7 +91,9 @@ function App() {
     setFormData(currentFormData);
     if (filterActive === true) {
       let currentFilteredData = [...filteredData];
-      const index = currentFilteredData.findIndex((element) => element.id === id);
+      const index = currentFilteredData.findIndex(
+        (element) => element.id === id
+      );
       currentFilteredData.splice(index, 1);
       setFilteredData(currentFilteredData);
     }
@@ -104,7 +115,7 @@ function App() {
 
       {/* Chart */}
       <List
-        data={filterActive === true ? filteredData :formData}
+        data={filterActive === true ? filteredData : formData}
         deleteItem={deleteItem}
         addFilter={addFilter}
         removeFilter={removeFilter}
