@@ -17,7 +17,7 @@ code {
 }
 
 button {
-  transition: transform 0.05s;
+  transition: transform 0.1s;
   width: 40%;
   height: 2.2rem;
   border-radius: 4px;

@@ -67,6 +67,10 @@
   align-items: center;
 }
 
+.buttons-container button:hover {
+  transform: scale(1.1);
+}
+
 .checkbox-container {
   display: inline-block;
   margin-top: 1rem;

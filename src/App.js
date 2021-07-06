@@ -30,6 +30,49 @@ function App() {
     setFormData((prevFormData) => [data, ...prevFormData]);
   }
 
+  // -------------------------------------------------------------Filter
+
+  const [filterActive, setFilterActive] = useState(false);
+  const [filteredData, setFilteredData] = useState(formData);
+
+  function addFilter(filterOptions) {
+    let currentData = formData;
+
+    setFilterActive(true);
+
+    if (filterOptions.year !== "none") {
+      currentData = currentData.filter(
+        (listItem) =>
+          listItem.date.getFullYear().toString() === filterOptions.year
+      );
+    }
+
+    if (filterOptions.month !== "none") {
+      currentData = currentData.filter(
+        (listItem) =>
+          listItem.date.toLocaleString("default", { month: "long" }) ===
+          filterOptions.month
+      );
+    }
+
+    if (!filterOptions.showIncome && !filterOptions.showExpense) {
+      currentData = [];
+    } else if (filterOptions.showExpense && !filterOptions.showIncome) {
+      currentData = currentData.filter(
+        (listItem) => listItem.type === "Expense"
+      );
+    } else if (filterOptions.showIncome && !filterOptions.showExpense) {
+      currentData = currentData.filter(
+        (listItem) => listItem.type === "Income"
+      );
+    }
+
+    setFilteredData(currentData);
+  }
+
+  function removeFilter() {
+    setFilterActive(false);
+  }
   // -------------------------------------------------------------Delete item
 
   function deleteItem(id) {
@@ -37,12 +80,18 @@ function App() {
     const index = currentFormData.findIndex((element) => element.id === id);
     currentFormData.splice(index, 1);
     setFormData(currentFormData);
+    if (filterActive === true) {
+      let currentFilteredData = [...filteredData];
+      const index = currentFilteredData.findIndex((element) => element.id === id);
+      currentFilteredData.splice(index, 1);
+      setFilteredData(currentFilteredData);
+    }
   }
 
   // -------------------------------------------------------------The returned page
   return (
     <Fragment>
-            {formType === "ClosedForm" ? (
+      {formType === "ClosedForm" ? (
         <ClosedForm
           openIncomeForm={openIncomeForm}
           openExpenseForm={openExpenseForm}
@@ -54,7 +103,13 @@ function App() {
       )}
 
       {/* Chart */}
-      <List data={formData} deleteItem={deleteItem} />
+      <List
+        data={filterActive === true ? filteredData :formData}
+        deleteItem={deleteItem}
+        addFilter={addFilter}
+        removeFilter={removeFilter}
+        filterActive={filterActive}
+      />
     </Fragment>
   );
 }

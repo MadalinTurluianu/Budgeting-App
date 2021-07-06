@@ -41,3 +41,7 @@
   background-color: #52cf52;
   border: 1px solid #114b00;
 }
+
+button:hover {
+  transform: scale(1.1);
+}
