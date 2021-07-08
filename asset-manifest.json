@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/Budgeting-App/static/css/main.bc7c2e73.chunk.css",
-    "main.js": "/Budgeting-App/static/js/main.4d10e91d.chunk.js",
-    "main.js.map": "/Budgeting-App/static/js/main.4d10e91d.chunk.js.map",
+    "main.css": "/Budgeting-App/static/css/main.a3ce05e0.chunk.css",
+    "main.js": "/Budgeting-App/static/js/main.c1b290e4.chunk.js",
+    "main.js.map": "/Budgeting-App/static/js/main.c1b290e4.chunk.js.map",
     "runtime-main.js": "/Budgeting-App/static/js/runtime-main.a6d085cc.js",
     "runtime-main.js.map": "/Budgeting-App/static/js/runtime-main.a6d085cc.js.map",
-    "static/js/2.60339145.chunk.js": "/Budgeting-App/static/js/2.60339145.chunk.js",
-    "static/js/2.60339145.chunk.js.map": "/Budgeting-App/static/js/2.60339145.chunk.js.map",
+    "static/js/2.076bfa37.chunk.js": "/Budgeting-App/static/js/2.076bfa37.chunk.js",
+    "static/js/2.076bfa37.chunk.js.map": "/Budgeting-App/static/js/2.076bfa37.chunk.js.map",
     "index.html": "/Budgeting-App/index.html",
-    "static/css/main.bc7c2e73.chunk.css.map": "/Budgeting-App/static/css/main.bc7c2e73.chunk.css.map",
-    "static/js/2.60339145.chunk.js.LICENSE.txt": "/Budgeting-App/static/js/2.60339145.chunk.js.LICENSE.txt",
+    "static/css/main.a3ce05e0.chunk.css.map": "/Budgeting-App/static/css/main.a3ce05e0.chunk.css.map",
+    "static/js/2.076bfa37.chunk.js.LICENSE.txt": "/Budgeting-App/static/js/2.076bfa37.chunk.js.LICENSE.txt",
     "static/media/bin.a00f55a4.png": "/Budgeting-App/static/media/bin.a00f55a4.png"
   },
   "entrypoints": [
     "static/js/runtime-main.a6d085cc.js",
-    "static/js/2.60339145.chunk.js",
-    "static/css/main.bc7c2e73.chunk.css",
-    "static/js/main.4d10e91d.chunk.js"
+    "static/js/2.076bfa37.chunk.js",
+    "static/css/main.a3ce05e0.chunk.css",
+    "static/js/main.c1b290e4.chunk.js"
   ]
 }
