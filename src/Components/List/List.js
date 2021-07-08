@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../UI/Card";
 import ListItem from "./ListItem";
 import Filter from "./Filter";
+import Graphic from "./Graphic";
 
 function List(props) {
   function deleteItem(id) {
@@ -15,6 +16,8 @@ function List(props) {
         addFilter={props.addFilter}
         removeFilter={props.removeFilter}
       />
+
+      <Graphic/>
 
       {props.data.map((object) => (
         <ListItem
