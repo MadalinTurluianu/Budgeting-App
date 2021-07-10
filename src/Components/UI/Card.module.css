@@ -6,3 +6,12 @@
     padding: 2rem;
     box-shadow: 2px 6px 10px #464545;
 }
+
+@media (max-width: 500px) {
+    
+    .card {
+        border-radius: 0;
+        width: 100vw;
+        padding: 2rem;
+    }
+}

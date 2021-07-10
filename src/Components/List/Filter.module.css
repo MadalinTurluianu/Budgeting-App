@@ -82,3 +82,18 @@
 .filter .filter-container__inactive {
   display: none;
 }
+
+@media (max-width: 500px) {
+
+  .filter .title p {
+    font-size: 0.8rem;
+  }
+
+  .filter .title h2 {
+    font-size: 1.2rem;
+  }
+
+  .filter label {
+    font-size: 0.9rem;
+  }
+}

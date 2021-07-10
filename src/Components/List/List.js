@@ -17,7 +17,11 @@ function List(props) {
         removeFilter={props.removeFilter}
       />
 
-      <Graphic/>
+      {props.filterActive && props.filteredYear !== "none" ? 
+      <Graphic
+      notFilteredData={props.notFilteredData}
+      filteredYear={props.filteredYear}
+      /> : ""}
 
       {props.data.map((object) => (
         <ListItem

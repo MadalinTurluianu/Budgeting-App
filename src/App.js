@@ -34,6 +34,7 @@ function App() {
 
   const [filterActive, setFilterActive] = useState(false);
   const [filteredData, setFilteredData] = useState(formData);
+  const [filteredYear, setFilteredYear] = useState("none");
 
   function addFilter(filterOptions) {
     let currentData = formData;
@@ -77,6 +78,7 @@ function App() {
     }
 
     setFilteredData(currentData);
+    setFilteredYear(filterOptions.year)
   }
 
   function removeFilter() {
@@ -99,6 +101,8 @@ function App() {
     }
   }
 
+
+
   // -------------------------------------------------------------The returned page
   return (
     <Fragment>
@@ -116,10 +120,12 @@ function App() {
       {/* Chart */}
       <List
         data={filterActive === true ? filteredData : formData}
+        notFilteredData={formData}
         deleteItem={deleteItem}
         addFilter={addFilter}
         removeFilter={removeFilter}
         filterActive={filterActive}
+        filteredYear={filteredYear}
       />
     </Fragment>
   );

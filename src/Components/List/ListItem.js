@@ -18,8 +18,7 @@ function ListItem(props) {
         }
       >
         <div className={styles.date}>
-          <p>{props.date.getDate()}</p>
-          <p>{props.date.toLocaleString("default", { month: "long" })}</p>
+          <p>{props.date.getDate()} {props.date.toLocaleString("default", { month: "short" })}</p>
           <p>{props.date.getFullYear()}</p>
         </div>
         <p>{props.name}</p>

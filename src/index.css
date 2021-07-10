@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   color: white;
   background-color: #3d3d3d;
@@ -28,4 +32,11 @@ button {
 
 button:hover {
   cursor: pointer;
+}
+
+@media (max-width: 500px) {
+
+  button {
+    font-size: 0.8rem;
+  }
 }
