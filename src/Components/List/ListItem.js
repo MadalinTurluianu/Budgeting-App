@@ -22,7 +22,7 @@ function ListItem(props) {
           <p>{props.date.getFullYear()}</p>
         </div>
         <p>{props.name}</p>
-        <p>{props.amount + " Ron"}</p>
+        <p>{props.amount + " $"}</p>
       </div>
       <button className={styles["delete-btn"]} onClick={deleteItemHandler}>
         <img src={binImg} alt="X" />
